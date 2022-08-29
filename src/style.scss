@@ -1,0 +1,95 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-coco-blocks-simple-slider {
+	
+	// overflow: hidden;
+	
+
+	> ul {
+		// display: flex;
+		// flex-direction: row;
+		// flex-wrap: nowrap;	
+	}
+
+	// Style only for Frontend: Make it a proper slider with overflow hidden
+	&.simple-slider-frontend { // there is also a frontend.scss for this. 
+		// [...]
+		cursor: pointer;
+
+		&:hover {
+
+		}
+	}
+
+	.div-data-overlay { display: none;}
+
+	// Style for both front and backend
+	&__slide {
+
+		min-height: 400px;
+		background-color: var(--wp--preset--color--contrast-3); // dark. Anyways the bg image will be the bg 
+		// bg image set inline
+		background-size: auto 100%;
+		background-position: center center;
+		background-blend-mode: normal; // for the gradient
+		color: var(--wp--preset--color--base); // white, for texts
+		transition: all 1s;
+
+		flex: 0 0 300px;
+		padding: 30px 30px;
+	
+
+		&:hover {
+			background-size: auto 130%;
+
+			// the button when HOVERING
+			.wp-block-coco-blocks-simple-slider__button {
+				background-color: var(--wp--preset--color--accent);
+				color:  var(--wp--preset--color--base);
+				border-color: var(--wp--preset--color--base);
+			}
+		}
+
+		// this is the link <a>
+		.wp-block-coco-blocks-simple-slider__clickablewrapper {
+			display: grid;
+			grid-template-columns: 100%;
+			grid-template-rows: 50px 200px auto;
+			width: 100%; height: 100%;
+		}
+			// the span
+			.wp-block-coco-blocks-simple-slider__badge {
+				border :1px solid var(--wp--preset--color--base);
+				display: inline-block;
+				justify-self: baseline;
+				align-self: baseline;
+				background: var(--wp--preset--color--accent);
+				color: var(--wp--preset--color--base);
+				padding: 0px 10px;
+				text-transform: uppercase;
+				letter-spacing: 0;
+				font-size: 0.9rem;
+			}
+			// the h3
+			.wp-block-coco-blocks-simple-slider__title {
+				color: var(--wp--preset--color--base);
+			}
+		
+
+	}
+
+	&__button {
+		border: 					1px solid var(--wp--preset--color--contrast);
+		padding: 					10px 15px;
+		background-color: var(--wp--preset--color--base);
+		border-radius: 		5px;
+		justify-self: 		baseline;
+		align-self:  			end;
+	}
+}
+

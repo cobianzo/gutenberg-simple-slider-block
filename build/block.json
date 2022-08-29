@@ -1,0 +1,65 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "coco-blocks/simple-slider",
+  "version": "0.1.0",
+  "title": "Simple Slider",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Example block scaffolded with Create Block tool.",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "slides": {
+      "type": "array",
+      "source": "query",
+      "selector": "li.wp-block-coco-blocks-simple-slider__slide",
+      "query": {
+        "bgImageUrl": {
+          "type": "string",
+          "source": "attribute",
+          "attribute": "data-bgimageurl",
+          "selector": ".div-data-overlay"
+        },
+        "bgImageID": {
+          "type": "string",
+          "source": "attribute",
+          "attribute": "data-bgimageid",
+          "selector": ".div-data-overlay"
+        },
+        "badge": {
+          "type": "string",
+          "source": "text",
+          "selector": ".wp-block-coco-blocks-simple-slider__clickablewrapper > .wp-block-coco-blocks-simple-slider__badge"
+        },
+        "title": {
+          "type": "string",
+          "source": "text",
+          "selector": ".wp-block-coco-blocks-simple-slider__clickablewrapper > .wp-block-coco-blocks-simple-slider__title"
+        },
+        "linkUrl": {
+          "type": "string",
+          "source": "attribute",
+          "attribute": "href",
+          "selector": ".wp-block-coco-blocks-simple-slider__clickablewrapper > .wp-block-coco-blocks-simple-slider__button"
+        },
+        "linkText": {
+          "type": "string",
+          "source": "text",
+          "selector": ".wp-block-coco-blocks-simple-slider__clickablewrapper > .wp-block-coco-blocks-simple-slider__button"
+        },
+        "linkTarget": {
+          "type": "string",
+          "source": "attribute",
+          "attribute": "target",
+          "selector": ".wp-block-coco-blocks-simple-slider__clickablewrapper > .wp-block-coco-blocks-simple-slider__button"
+        }
+      }
+    }
+  },
+  "textdomain": "simple-slider",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

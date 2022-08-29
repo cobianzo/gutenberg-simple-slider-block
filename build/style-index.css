@@ -1,0 +1,66 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-coco-blocks-simple-slider.simple-slider-frontend {
+  cursor: pointer;
+}
+.wp-block-coco-blocks-simple-slider .div-data-overlay {
+  display: none;
+}
+.wp-block-coco-blocks-simple-slider__slide {
+  min-height: 400px;
+  background-color: var(--wp--preset--color--contrast-3);
+  background-size: auto 100%;
+  background-position: center center;
+  background-blend-mode: normal;
+  color: var(--wp--preset--color--base);
+  transition: all 1s;
+  flex: 0 0 300px;
+  padding: 30px 30px;
+}
+.wp-block-coco-blocks-simple-slider__slide:hover {
+  background-size: auto 130%;
+}
+.wp-block-coco-blocks-simple-slider__slide:hover .wp-block-coco-blocks-simple-slider__button {
+  background-color: var(--wp--preset--color--accent);
+  color: var(--wp--preset--color--base);
+  border-color: var(--wp--preset--color--base);
+}
+.wp-block-coco-blocks-simple-slider__slide .wp-block-coco-blocks-simple-slider__clickablewrapper {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 50px 200px auto;
+  width: 100%;
+  height: 100%;
+}
+.wp-block-coco-blocks-simple-slider__slide .wp-block-coco-blocks-simple-slider__badge {
+  border: 1px solid var(--wp--preset--color--base);
+  display: inline-block;
+  justify-self: baseline;
+  align-self: baseline;
+  background: var(--wp--preset--color--accent);
+  color: var(--wp--preset--color--base);
+  padding: 0px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-size: 0.9rem;
+}
+.wp-block-coco-blocks-simple-slider__slide .wp-block-coco-blocks-simple-slider__title {
+  color: var(--wp--preset--color--base);
+}
+.wp-block-coco-blocks-simple-slider__button {
+  border: 1px solid var(--wp--preset--color--contrast);
+  padding: 10px 15px;
+  background-color: var(--wp--preset--color--base);
+  border-radius: 5px;
+  justify-self: baseline;
+  align-self: end;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

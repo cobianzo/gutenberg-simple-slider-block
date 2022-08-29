@@ -1,0 +1,76 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+
+ Markup in backend editor: 
+
+ .wp-block.wp-block-coco-blocks-simple-slider > ul > 
+ 				.wp-block-coco-blocks-simple-slider__slide ... and from here it is common to the frontned
+
+			Respect markup in frontend: 
+			.simple-slider-frontend.wp-block-coco-blocks-simple-slider > ul > 
+				.wp-block-coco-blocks-simple-slider__slide ... and from here it is common to the backend
+ */
+
+ /* the super wrapper */
+
+.wp-block-coco-blocks-simple-slider {
+	border: 10px dotted var(--accent);
+	background-color: transparent;
+
+	> ul { // row container
+		display: 	flex;
+		flex-direction: row;
+	}
+	
+	&__slide { 
+		// every slide column wrapper
+		flex: 0 0 300px;
+		list-style: none;
+	
+		position: relative;  // so the button can be absolute
+	
+		&.wp-block-coco-blocks-simple-slider__slide--noneditableslidewrapper {
+			h3 div { color: white !important; }
+		}
+		// invert colours when selected. 
+		&.selected {
+			background-color: var(--wp--preset--color--base);
+			color: var(--wp--preset--color--contrast);
+			border: 10px solid rgba(0,0,0,0.4);
+			
+		}
+
+		.wp-block-coco-blocks-simple-slider__link {
+			// style of link button in style.css
+			
+			&wrapper {
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-auto-rows: 50px 50px;
+				align-items: baseline; 	// so btn dont get 100% width
+			}
+			&oneline {
+				display: flex; flex-direction: row;
+				border: 1px solid var(--base1);
+				> div {
+					flex-basis: 50%;
+				}
+			}
+		}
+		.save-btn { // btn in bottom right to stop editing the slide
+			position: absolute;
+			background-color: white;
+			bottom: 0;
+			right: 0;
+		}
+		.upload-btn { // btn to load the bg image
+			position: absolute;
+			top: 0;
+    	left: 50%;
+    	right: auto;
+    	transform: translateX(-50%);
+		}
+	}
+}
