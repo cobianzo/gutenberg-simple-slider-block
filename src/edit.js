@@ -88,8 +88,8 @@ export default function Edit(props) {
 					<ToolbarButton
 						icon={"arrow-right-alt2"}
 						isDisabled={
-							editingSlide >= props.attributes.slides.length ||
-							editingSlide === null
+							editingSlide === null ||
+							editingSlide >= props.attributes.slides.length
 						}
 						label="move right"
 						onClick={() => moveSlide(editingSlide, editingSlide + 1)}
@@ -139,11 +139,11 @@ function EditSlideComponent({
 	updateSlideField,
 	setAttributes,
 }) {
-	console.log(
-		"%ctodelete EditSlide render. Attrs",
-		"font-size:1.2rem;color:orange;",
-		attrs
-	);
+	// console.log(
+	// 	"%ctodelete EditSlide render. Attrs",
+	// 	"font-size:1.2rem;color:orange;",
+	// 	attrs
+	// );
 
 	return (
 		<li
@@ -198,7 +198,7 @@ function EditSlideComponent({
 				<div className="wp-block-coco-blocks-simple-slider__linkwrapper">
 					<RichText
 						tagName="span"
-						className="wp-block-coco-blocks-simple-slider__button"
+						className="gb-button gb-button-text wp-block-coco-blocks-simple-slider__button"
 						placeholder="Click me..."
 						value={attrs.linkText}
 						onChange={(newVal) =>

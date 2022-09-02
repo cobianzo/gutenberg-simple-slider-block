@@ -1,7 +1,7 @@
 import { useBlockProps, RichText } from "@wordpress/block-editor";
 
 export default function save(props) {
-	console.log("%cSAVE", "font-size:1.2rem;color:pink;", props);
+	// console.log("%cSAVE", "font-size:1.2rem;color:pink;", props);
 	return (
 		<div
 			{...useBlockProps.save({ className: "splide simple-slider-frontend" })}
@@ -70,7 +70,7 @@ export function SaveSlideComponent({
 					href={attrs.linkUrl}
 					onClick={(e) => (window.location = slide.linkUrl)}
 					target={attrs.linkTarget}
-					className="wp-block-coco-blocks-simple-slider__button"
+					className="gb-button gb-button-text wp-block-coco-blocks-simple-slider__button"
 				>
 					{attrs.linkText}
 				</button>

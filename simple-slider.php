@@ -31,7 +31,7 @@ add_action( 'init', 'coco_blocks_simple_slider_block_init' );
 add_action( 'enqueue_block_assets', 'myplugin_enqueue_if_block_is_present' );  // Can only be loaded in the footer
 // add_action( 'wp_enqueue_scripts', 'myplugin_enqueue_if_block_is_present' ); // Can be loaded in the both in head and footer
 function myplugin_enqueue_if_block_is_present() {
-
+	$version = '1.2';
 	if (is_admin()) return;
 
 	if ( has_block( 'coco-blocks/simple-slider' ) ) {
@@ -39,7 +39,7 @@ function myplugin_enqueue_if_block_is_present() {
 			'simple-slider-js',
 			plugin_dir_url( __FILE__ ) . '/build/frontend.js', // this is the js needed to make the slider work in frontend. In backend we dont need it.
 			array(),
-			'1.0.0',
+			$version,
 			true
 		);
 
@@ -48,7 +48,7 @@ function myplugin_enqueue_if_block_is_present() {
 					//plugin_dir_url( __FILE__ ) . '/node_modules/@splidejs/splide/dist/css/splide.min.css',
 						plugin_dir_url( __FILE__ ) . '/build/frontend.css',
 					array(),
-					1
+					$version
 				);
 	}
 }

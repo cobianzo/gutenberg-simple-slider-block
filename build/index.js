@@ -94,7 +94,7 @@ function Edit(props) {
     onClick: () => moveSlide(editingSlide, editingSlide - 1)
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarButton, {
     icon: "arrow-right-alt2",
-    isDisabled: editingSlide >= props.attributes.slides.length || editingSlide === null,
+    isDisabled: editingSlide === null || editingSlide >= props.attributes.slides.length,
     label: "move right",
     onClick: () => moveSlide(editingSlide, editingSlide + 1)
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarButton, {
@@ -131,7 +131,11 @@ function EditSlideComponent(_ref) {
     updateSlideField,
     setAttributes
   } = _ref;
-  console.log("%ctodelete EditSlide render. Attrs", "font-size:1.2rem;color:orange;", attrs);
+  // console.log(
+  // 	"%ctodelete EditSlide render. Attrs",
+  // 	"font-size:1.2rem;color:orange;",
+  // 	attrs
+  // );
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
     className: "wp-block-coco-blocks-simple-slider__slide selected",
     style: {
@@ -177,7 +181,7 @@ function EditSlideComponent(_ref) {
     className: "wp-block-coco-blocks-simple-slider__linkwrapper"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "span",
-    className: "wp-block-coco-blocks-simple-slider__button",
+    className: "gb-button gb-button-text wp-block-coco-blocks-simple-slider__button",
     placeholder: "Click me...",
     value: attrs.linkText,
     onChange: newVal => updateSlideField(indexSlide, "linkText", newVal)
@@ -292,7 +296,7 @@ __webpack_require__.r(__webpack_exports__);
 function save(props) {
   var _props$attributes$sli;
 
-  console.log("%cSAVE", "font-size:1.2rem;color:pink;", props);
+  // console.log("%cSAVE", "font-size:1.2rem;color:pink;", props);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
     className: "splide simple-slider-frontend"
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -351,7 +355,7 @@ function SaveSlideComponent(_ref) {
     href: attrs.linkUrl,
     onClick: e => window.location = slide.linkUrl,
     target: attrs.linkTarget,
-    className: "wp-block-coco-blocks-simple-slider__button"
+    className: "gb-button gb-button-text wp-block-coco-blocks-simple-slider__button"
   }, attrs.linkText)));
 }
 
@@ -373,19 +377,18 @@ __webpack_require__.r(__webpack_exports__);
 function useEscKey(callbackfn) {
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     const keyDownHandler = event => {
-      console.log('User pressed: ', event.key);
-
-      if (event.key === 'Escape') {
+      // console.log( 'User pressed: ', event.key );
+      if (event.key === "Escape") {
         event.preventDefault(); // 👇️ your logic here
 
         callbackfn();
       }
     };
 
-    document.addEventListener('keydown', keyDownHandler); // 👇️ clean up event listener
+    document.addEventListener("keydown", keyDownHandler); // 👇️ clean up event listener
 
     return () => {
-      document.removeEventListener('keydown', keyDownHandler);
+      document.removeEventListener("keydown", keyDownHandler);
     };
   }, []);
 }

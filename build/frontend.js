@@ -3819,7 +3819,7 @@ console.log("splide librery loaded", _splidejs_splide__WEBPACK_IMPORTED_MODULE_0
 if (document.querySelector(".splide")) {
   var splide = new _splidejs_splide__WEBPACK_IMPORTED_MODULE_0__["default"](".splide", {
     type: "slide",
-    perPage: 3,
+    perPage: 4,
     perMove: 1
   });
   splide.mount();

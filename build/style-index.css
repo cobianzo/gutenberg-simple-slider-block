@@ -7,8 +7,39 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+.wp-block-coco-blocks-simple-slider .splide__track {
+  --slide-width: 300px;
+  width: var(--slide-width);
+  margin: auto;
+}
+@media (min-width: 630px) {
+  .wp-block-coco-blocks-simple-slider .splide__track {
+    width: calc(var(--slide-width) * 2 + 10px);
+  }
+}
+@media (min-width: 930px) {
+  .wp-block-coco-blocks-simple-slider .splide__track {
+    width: calc(var(--slide-width) * 3 + 10px);
+  }
+}
+@media (min-width: 1200px) {
+  .wp-block-coco-blocks-simple-slider .splide__track {
+    width: calc(var(--slide-width) * 4 + 10px);
+  }
+}
 .wp-block-coco-blocks-simple-slider.simple-slider-frontend {
   cursor: pointer;
+}
+.wp-block-coco-blocks-simple-slider.simple-slider-frontend li:hover {
+  background-size: auto 130%;
+}
+.wp-block-coco-blocks-simple-slider.simple-slider-frontend li:hover .wp-block-coco-blocks-simple-slider__badge {
+  opacity: 1;
+}
+.wp-block-coco-blocks-simple-slider.simple-slider-frontend li:hover .wp-block-coco-blocks-simple-slider__button {
+  background-color: var(--wp--preset--color--accent);
+  color: var(--wp--preset--color--base) !important;
+  border-color: var(--wp--preset--color--base);
 }
 .wp-block-coco-blocks-simple-slider .div-data-overlay {
   display: none;
@@ -22,15 +53,7 @@
   color: var(--wp--preset--color--base);
   transition: all 1s;
   flex: 0 0 300px;
-  padding: 30px 30px;
-}
-.wp-block-coco-blocks-simple-slider__slide:hover {
-  background-size: auto 130%;
-}
-.wp-block-coco-blocks-simple-slider__slide:hover .wp-block-coco-blocks-simple-slider__button {
-  background-color: var(--wp--preset--color--accent);
-  color: var(--wp--preset--color--base);
-  border-color: var(--wp--preset--color--base);
+  padding: 50px 30px;
 }
 .wp-block-coco-blocks-simple-slider__slide .wp-block-coco-blocks-simple-slider__clickablewrapper {
   display: grid;
@@ -40,11 +63,12 @@
   height: 100%;
 }
 .wp-block-coco-blocks-simple-slider__slide .wp-block-coco-blocks-simple-slider__badge {
-  border: 1px solid var(--wp--preset--color--base);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  opacity: 0.8;
+  border-radius: 4px;
   display: inline-block;
   justify-self: baseline;
   align-self: baseline;
-  background: var(--wp--preset--color--accent);
   color: var(--wp--preset--color--base);
   padding: 0px 10px;
   text-transform: uppercase;
@@ -53,14 +77,26 @@
 }
 .wp-block-coco-blocks-simple-slider__slide .wp-block-coco-blocks-simple-slider__title {
   color: var(--wp--preset--color--base);
+  font-size: 1.5rem;
 }
 .wp-block-coco-blocks-simple-slider__button {
-  border: 1px solid var(--wp--preset--color--contrast);
-  padding: 10px 15px;
-  background-color: var(--wp--preset--color--base);
   border-radius: 5px;
+  font-size: 0.9rem !important;
   justify-self: baseline;
   align-self: end;
+}
+
+/* slider arrows moved to the sidex if screen is wide enough */
+@media (min-width: 1390px) {
+  .splide__arrow {
+    transition: all 0.5s;
+  }
+  .splide__arrow.splide__arrow--prev {
+    transform: translateX(-200%);
+  }
+  .splide__arrow.splide__arrow--next {
+    transform: translateX(200%);
+  }
 }
 
 /*# sourceMappingURL=style-index.css.map*/

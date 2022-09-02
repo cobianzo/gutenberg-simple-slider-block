@@ -11,7 +11,7 @@ console.log("splide librery loaded", Splide);
 if (document.querySelector(".splide")) {
 	var splide = new Splide(".splide", {
 		type: "slide",
-		perPage: 3,
+		perPage: 4,
 		perMove: 1,
 	});
 
